@@ -1,0 +1,67 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558 
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "React Offline",
+            "type": "shell",
+            "command": "npm start",
+            "options": {
+                "cwd": "${workspaceFolder}\\notes-app-client"
+            },
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Serverless Offline",
+            "type": "shell",
+            "command": "serverless offline start",
+            "options": {
+                "cwd": "${workspaceFolder}\\services\\booking",
+                "env": {
+                    "AUTHORIZER": "{\"principalId\":\"offlineContext_authorizer_principalId\",\"claims\":{\"email\":\"james.shannon@essensys.tech\"}}"
+                }
+            },
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Serverless Deploy Dev",
+            "type": "shell",
+            "command": "serverless deploy",
+            "options": {
+                "cwd": "${workspaceFolder}\\services\\booking"
+            },
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared",
+                "clear": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "React Deploy",
+            "type": "shell",
+            "command": "npm run deploy",
+            "options": {
+                "cwd": "${workspaceFolder}\\app"
+            },
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            },
+            "problemMatcher": []
+        }
+    ]
+}

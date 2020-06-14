@@ -1,7 +1,7 @@
 export default {
   MAX_ATTACHMENT_SIZE: 5000000,
     s3: {
-      REGION: "ew-west-2",
+      REGION: "eu-west-2",
       BUCKET: "eds-notes-app-uploads"
     },
     apiGateway: {
